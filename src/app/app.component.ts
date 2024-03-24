@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./navbar/navbar.component";
-import { ImageBtnComponent } from "./image-btn/image-btn.component";
 import { CurrencyPipe, PercentPipe, UpperCasePipe } from '@angular/common';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ImageBtnComponent } from './components/image-btn/image-btn.component';
 
 @Component({
     selector: 'app-root',
