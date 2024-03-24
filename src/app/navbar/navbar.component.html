@@ -1,0 +1,23 @@
+<nav class="border-b flex items-center justify-between mt-5 pb-5">
+    <div class="flex items-center gap-10">
+        <a routerLink='/'>
+            <img src="../../assets/images/logo.svg" alt="">
+        </a>
+        <ul class="flex gap-10 items-center">
+            <li><a routerLink='/collections'>Collections</a></li>
+            <li><a routerLink='/men-section'>Men</a></li>
+            <li><a routerLink='/women-section'>Women</a></li>
+            <li><a routerLink='about'>About</a></li>
+            <li><a routerLink='contact'>Contact</a></li>
+        </ul>
+    </div>
+    <div class="flex gap-10 items-center">
+        <button class="relative">
+            <div  class="absolute w-4 h-4 rounded-full bg-[#ff7900] left-3 -top-2 flex items-center justify-center text-[10px] text-white">{{numberOfProducts}}</div>
+            <img src="../../assets/images/icon-cart.svg" alt="">
+        </button>
+        <div class="w-8">
+            <img src="../../assets/images/image-avatar.png" alt="">
+        </div>
+    </div>
+</nav>
