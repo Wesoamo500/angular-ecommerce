@@ -3,21 +3,25 @@
         <a routerLink='/'>
             <img src="../../assets/images/logo.svg" alt="">
         </a>
-        <ul class="flex gap-10 items-center">
-            <li><a routerLink='/collections'>Collections</a></li>
-            <li><a routerLink='/men-section'>Men</a></li>
-            <li><a routerLink='/women-section'>Women</a></li>
-            <li><a routerLink='about'>About</a></li>
-            <li><a routerLink='contact'>Contact</a></li>
+        <ul class="flex gap-10 items-center  font-bold text-sm text-[#3e3e3e]">
+            <li><a routerLinkActive="border-b-4 pb-6 border-[#ff7900]"   routerLink='/collections'>Collections</a></li>
+            <li><a routerLinkActive="border-b-4 pb-6 border-[#ff7900]" routerLink='/men-section'>Men</a></li>
+            <li><a routerLinkActive="border-b-4 pb-6 border-[#ff7900]" routerLink='/women-section'>Women</a></li>
+            <li><a routerLinkActive="border-b-4 pb-6 border-[#ff7900]" routerLink='about'>About</a></li>
+            <li><a routerLinkActive="border-b-4 pb-6 border-[#ff7900]" routerLink='contact'>Contact</a></li>
         </ul>
     </div>
-    <div class="flex gap-10 items-center">
+    <div [class]="checkAuth()?'hidden':''" class="flex gap-10 items-center">
         <button class="relative">
-            <div  class="absolute w-4 h-4 rounded-full bg-[#ff7900] left-3 -top-2 flex items-center justify-center text-[10px] text-white">{{numberOfProducts}}</div>
+            <div  class="absolute w-4 h-4 rounded-full bg-[#ff7900] left-3 -top-2 flex items-center justify-center text-[10px] text-white">{{numberOf()}}</div>
             <img src="../../assets/images/icon-cart.svg" alt="">
         </button>
         <div class="w-8">
             <img src="../../assets/images/image-avatar.png" alt="">
         </div>
     </div>
+    <ul [class]="checkAuth()?'':'hidden'" class="flex gap-10 items-center">
+        <li class="border w-[120px] h-[30px] flex items-center justify-center text-sm font-bold  rounded border-[#ff7900] text-[#ff7900]"><a routerLink='/auth/login'>Login</a></li>
+        <li class="w-[120px] h-[30px] flex items-center justify-center text-sm font-bold  rounded bg-[#ff7900] text-white"><a routerLink='/auth/register'>Register</a></li>
+    </ul>
 </nav>

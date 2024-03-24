@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +11,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  @Input() numberOfProducts!:number;
+  cartService = inject(CartService);
+  authService = inject(AuthService);
+  numberOf(){
+    return this.cartService.numberOfProducts
+  }
+  checkAuth() {
+    return this.authService.checkAuth()
+  }
 }
