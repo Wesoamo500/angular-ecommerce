@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CartService } from './services/cart.service';
+import { FooterComponent } from "./components/footer/footer.component";
 
 
 @Component({
@@ -9,7 +10,7 @@ import { CartService } from './services/cart.service';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, NavbarComponent]
+    imports: [RouterOutlet, NavbarComponent, FooterComponent]
 })
 export class AppComponent{
   numberOfCartProducts:number = this.cartService.numberOfProducts;
