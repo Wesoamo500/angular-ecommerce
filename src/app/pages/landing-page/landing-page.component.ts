@@ -3,13 +3,14 @@ import { CollectionsComponent } from "../collections/collections.component";
 import { ProductService } from '../../services/product.service';
 import { JsonPipe } from '@angular/common';
 import { ProductCardComponent } from "../../components/product-card/product-card.component";
+import { ReviewsCardComponent } from "../../components/reviews-card/reviews-card.component";
 
 @Component({
     selector: 'app-landing-page',
     standalone: true,
     templateUrl: './landing-page.component.html',
     styleUrl: './landing-page.component.css',
-    imports: [CollectionsComponent, JsonPipe, ProductCardComponent]
+    imports: [CollectionsComponent, ProductCardComponent, ReviewsCardComponent]
 })
 export class LandingPageComponent {
     productService = inject(ProductService)
@@ -18,6 +19,7 @@ export class LandingPageComponent {
     reviews = this.productService.products[0].reviews
     products = this.productService.products!
     active = 'description';
+    isComment = true;
     onToggle(){
         return `${this.active}Style`
     }
@@ -29,5 +31,8 @@ export class LandingPageComponent {
     }
     descriptionStyle(){
         return 'text-[#ff7900]'
+    }
+    avatar(user: string){
+        return user.split(' ')[0].charAt(0) + user.split(' ')[1].charAt(0)
     }
 }
