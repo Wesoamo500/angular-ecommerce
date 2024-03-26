@@ -1,11 +1,13 @@
-interface ReviewReplies {
+export interface ReviewReplies {
     [key: string]: string | undefined; // Key-value pairs where the key is a string (name) and the value is also a string (reply)
   }
   
   // Interface for each review object
-  interface Review {
+  export interface Review {
+    user: string,
+    ratings: number,
     comment: string;
-    replies: ReviewReplies;
+    replies: ReviewReplies[];
   }
   
   // Interface for each image object
