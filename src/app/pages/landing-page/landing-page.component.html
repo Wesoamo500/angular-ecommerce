@@ -2,8 +2,10 @@
     <app-collections></app-collections>
     <div class="flex flex-col">
         <div class="w-full border-b gap-5 flex items-center justify-center pb-3">
-            <p (click)="handleToggle('description')" [class]="active==='description'?'text-[#ff7900]':'text-[#3e3e3e]'" class="text-sm font-bold cursor-pointer">Description</p>
-            <p (click)="handleToggle('review')" [class]="active==='description'?'text-[#3e3e3e]':'text-[#ff7900]'" class="text-sm font-bold cursor-pointer">Review (1)</p>
+            <p (click)="handleToggle('description')" [class]="active==='description'?'text-[#ff7900]':'text-[#3e3e3e]'"
+                class="text-sm font-bold cursor-pointer">Description</p>
+            <p (click)="handleToggle('review')" [class]="active==='description'?'text-[#3e3e3e]':'text-[#ff7900]'"
+                class="text-sm font-bold cursor-pointer">Review (1)</p>
         </div>
         <div class="mt-10 border-b p-5">
             <p class="text-sm font-medium text-[#3e3e3e]">
@@ -12,52 +14,13 @@
         </div>
     </div>
     <div class="flex flex-col items-center gap-4 mb-10">
-        <h2 class="text-lg text-[#3e3e3e] font-extrabold underline underline-offset-6 decoration-2 decoration-wavy decoration-[#ff7900] border p-4">Related products</h2>
+        <h2
+            class="text-lg text-[#3e3e3e] font-extrabold underline underline-offset-6 decoration-2 decoration-wavy decoration-[#ff7900] border p-4">
+            Related products</h2>
         <div class="flex items-center justify-center gap-5">
-            <div class="border rounded flex flex-col gap-2 items-start">
-                <img src="../../../assets/images/image-product-1.jpg" alt="" class="rounded-t">
-                <div class="flex items-start w-full p-2">
-                    <div class="text-[12px] font-bold w-7/12 flex flex-col gap-1">
-                        <p class="font-semibold text-gray-400">Clothing, Designer, Men</p>
-                        <p class="font-semibold">Hot Tubs Designs</p>
-                        <p class="text-[#ff7900] flex items-center gap-2">$250 <span class="text-gray-400 line-through">$125</span></p>
-                    </div>
-                    <div class="text-[12px]">🌟🌟🌟🌟🌟</div>
-                </div>
-            </div>
-            <div class="border rounded flex flex-col gap-2 items-start">
-                <img src="../../../assets/images/image-product-1.jpg" alt="" class="rounded-t">
-                <div class="flex items-start w-full p-2">
-                    <div class="text-[12px] font-bold w-7/12 flex flex-col gap-1">
-                        <p class="font-semibold text-gray-400">Clothing, Designer, Men</p>
-                        <p class="font-semibold">Hot Tubs Designs</p>
-                        <p class="text-[#ff7900] flex items-center gap-2">$250 <span class="text-gray-400 line-through">$125</span></p>
-                    </div>
-                    <div class="text-[12px]">🌟🌟🌟🌟🌟</div>
-                </div>
-            </div>
-            <div class="border rounded flex flex-col gap-2 items-start">
-                <img src="../../../assets/images/image-product-1.jpg" alt="" class="rounded-t">
-                <div class="flex items-start w-full p-2">
-                    <div class="text-[12px] font-bold w-7/12 flex flex-col gap-1">
-                        <p class="font-semibold text-gray-400">Clothing, Designer, Men</p>
-                        <p class="font-semibold">Hot Tubs Designs</p>
-                        <p class="text-[#ff7900] flex items-center gap-2">$250 <span class="text-gray-400 line-through">$125</span></p>
-                    </div>
-                    <div class="text-[12px]">🌟🌟🌟🌟🌟</div>
-                </div>
-            </div>
-            <div class="border rounded flex flex-col gap-2 items-start">
-                <img src="../../../assets/images/image-product-1.jpg" alt="" class="rounded-t">
-                <div class="flex items-start w-full p-2">
-                    <div class="text-[12px] font-bold w-7/12 flex flex-col gap-1">
-                        <p class="font-semibold text-gray-400">Clothing, Designer, Men</p>
-                        <p class="font-semibold">Hot Tubs Designs</p>
-                        <p class="text-[#ff7900] flex items-center gap-2">$250 <span class="text-gray-400 line-through">$125</span></p>
-                    </div>
-                    <div class="text-[12px]">🌟🌟🌟🌟🌟</div>
-                </div>
-            </div>
+            @for (images of products[0].images; track $index) {
+            <app-product-card class="cursor-pointer hover:opacity-70" [index]="$index" [product]="products[0]"></app-product-card>
+            }
         </div>
     </div>
 </div>
