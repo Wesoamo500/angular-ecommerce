@@ -6,6 +6,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { Products } from '../../../data/products';
 import { CartService } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-collections',
@@ -18,8 +19,9 @@ export class CollectionsComponent {
   router = inject(Router)
   cartService = inject(CartService)
   authService = inject(AuthService)
+  productService = inject(ProductService)
   
-  products = Products
+  products = this.productService.products
   active = 0;
   isActive = true;
   cartProducts:number[] = []
