@@ -1,5 +1,5 @@
 <div>
-  <section class="border flex items-center justify-center gap-16 p-16">
+  <section class="flex items-center justify-center gap-16 p-16">
     @for (item of products; track $index) {
     <div class="flex flex-col gap-4 w-[80%]">
       <div>
@@ -14,7 +14,7 @@
     </div>
     <div class="flex flex-col">
       <h2 class="mb-5 text-[#ff7900] text-sm font-bold">{{item.company | uppercase}}</h2>
-      <h3 class="mb-10 text-[#1c1c1c] text-2xl font-extrabold border w-[70%]">{{item.title}}</h3>
+      <h3 class="mb-10 text-[#1c1c1c] text-2xl font-extrabold w-[70%]">{{item.title}}</h3>
       <p class="text-sm font-medium text-[#3e3e3e] mb-6 w-[80%]">{{item.description}}</p>
       <div class="flex items-start gap-5">
         <p class="flex flex-col text-[#1c1c1c] font-bold">{{item.price | currency}}<span
