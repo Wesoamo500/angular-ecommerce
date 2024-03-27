@@ -3,7 +3,6 @@ import { Router, RouterOutlet } from '@angular/router';
 import { CurrencyPipe, PercentPipe, UpperCasePipe } from '@angular/common';
 import { ImageBtnComponent } from '../../components/image-btn/image-btn.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { Products } from '../../../data/products';
 import { CartService } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
 import { ProductService } from '../../services/product.service';
@@ -24,7 +23,6 @@ export class CollectionsComponent {
   products = this.productService.products
   active = 0;
   isActive = true;
-  cartProducts:number[] = []
   handleIsActive(index: number){
     return this.active === index
   }
@@ -42,11 +40,6 @@ export class CollectionsComponent {
     })
   }
   handleAddToCart(productId: number) {
-    if(this.authService.checkAuth()){
-      this.router.navigateByUrl('auth/login')
-    }
-    if(this.cartProducts.includes(productId)) return
-    this.cartProducts = [...this.cartProducts, productId]
-    this.cartService.updateNumberOfProducts(this.cartProducts.length)
+    this.cartService.AddToCart(productId)
   }
 }
